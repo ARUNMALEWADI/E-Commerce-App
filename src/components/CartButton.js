@@ -1,8 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import Cart from './Cart';
+import ItemContext from './ItemContext';
 
 
 const CartButton = () => {
+   const crx=useContext(ItemContext)
    const[showCart ,setCart]= useState(false)
    const ShowCartHandler=()=>{
     setCart(true)
@@ -13,7 +15,10 @@ const CartButton = () => {
 
    }
   return  <Fragment>
-   <button onClick={ShowCartHandler}>Cart</button>
+   <button onClick={ShowCartHandler}>
+    <section>Cart</section>
+    <section>{crx.items.length}</section>
+   </button>
    {
     showCart&&<Cart closeCart={HideCartHandler}></Cart>
    }

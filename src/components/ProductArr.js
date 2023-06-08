@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Product from './Product'
 const productsArr = [
 
     {
@@ -45,11 +46,13 @@ const productsArr = [
         
 
 const ProductArr = () => {
+
+
   return <Fragment>
     
   <ul>
 {
-    productsArr.map((item)=><li><div>{item.title}</div><div>{item.price}Rs.</div><div><img src={item.imageUrl} alt="fetching Error"></img></div></li>)
+    productsArr.map((item)=><Product key={item.title} item={item} id={Math.random()}></Product>)
 }
     </ul>
   

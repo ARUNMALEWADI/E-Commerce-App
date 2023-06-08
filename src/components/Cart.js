@@ -1,50 +1,16 @@
-import React from 'react'
-const cartElements = [
+import React, { useContext } from 'react'
+import ItemContext from './ItemContext';
 
-    {
-    
-    title: 'Colors',
-    
-    price: 100,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    
-    quantity: 2,
-    
-    },
-    
-    {
-    
-    title: 'Black and white Colors',
-    
-    price: 50,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    
-    quantity: 3,
-    
-    },
-    
-    {
-    
-    title: 'Yellow and Black Colors',
-    
-    price: 70,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    
-    quantity: 1,
-    
-    }
-    
-    ]
 
 const Cart = () => {
-    const items= cartElements.map((item)=><li><div>{item.title}</div><div>{item.price}</div><div><img src={item.imageUrl} alt='fetchingerror'></img></div><div>{item.quantity}</div></li>)
-    console.log(items);
+    const crx=useContext(ItemContext);
+    const items= crx.items.map((item)=><li><div>{item.title}</div><div>{item.price}</div><div><img src={item.imageUrl} alt='fetchingerror'></img></div><div>{item.amount}</div></li>)
+    console.log(items.length);
+   
   return   <div>
         <ul>     
        {items}
+       {crx.totalAmount}
         </ul>
 
     </div>
