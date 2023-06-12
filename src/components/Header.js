@@ -1,19 +1,19 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import CartButton from './CartButton'
-import AboutUs from './AboutUs'
+
+import {Link} from 'react-router-dom'
 
 const Header = () => {
-    const [showabout,setabout]=useState(false)
-const AboutusHandler=()=>{
-    setabout(true);
+  
 
-}
+
   return <Fragment>
-    <button onClick={AboutusHandler}>About</button>
+       <Link to="/AboutUs">AboutUs</Link>
+     <Link to="/ContactUs">ContactUs</Link>
        <CartButton></CartButton>
-       {
-      showabout && <AboutUs></AboutUs>
-       }
+  
+     
+
   </Fragment>
     
   

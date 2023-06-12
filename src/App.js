@@ -1,20 +1,19 @@
 import './App.css';
-import ProductArr from './components/ProductArr';
 import ProductsProvider from './components/ProductsProvider';
 import Header from './components/Header';
-import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
-const routers=createBrowserRouter([
-  { path:'/About' ,element:<AboutUs/>}
-,]);
-
+import ContactUs from './components/ContactUs';
+import ProductArr from './components/ProductArr';
 
 function App() {
  
   return <ProductsProvider>
-    <RouterProvider router={routers}/>
-    <Header></Header>
-   <ProductArr></ProductArr>
+            <Header></Header>
+          <Route path="/AboutUs"><AboutUs></AboutUs></Route>
+        <Route path="/ContactUs"><ContactUs></ContactUs></Route>
+        <ProductArr></ProductArr>
+        
    </ProductsProvider>
  
 
