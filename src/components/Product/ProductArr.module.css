@@ -1,0 +1,28 @@
+.ul{
+    margin: 5cm;
+    margin-top: 3cm;
+    display: flexbox;
+    columns: 2;
+ 
+ align-items: flex-start;
+
+}
+.head{
+    margin-top:3cm ;
+   margin-left: 13cm;
+}
+.welcome{
+    display: grid;
+    position: relative;
+    align-items: center;
+    padding-inline-start: 4.5cm;
+    padding-bottom: 1cm;
+    padding-top: 1cm;
+    margin-top: 2cm;
+    background-color: rgb(243, 101, 6);
+    color: white;
+    width: 100%;
+    height: max-content;
+    font-size: -webkit-xxx-large;
+    
+  }

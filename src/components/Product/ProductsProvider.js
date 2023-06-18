@@ -9,11 +9,13 @@ const defaultState={
 const CartReducer=(state,action)=>{
 if(action.type==='ADD')
 {  const UpdatedTotalAmount=state.totalAmount+ action.item.amount*action.item.price; 
+  console.log(state.items);
   const existingitemIndex=state.items.findIndex((item)=>item.id===action.item.id)
-  console.log(action.item.id);
+  console.log(existingitemIndex);
+  // console.log(action.item.id);
 
   const ExistingCartItem=state.items[existingitemIndex];  //for updation if item is alreadypresent
-  console.log(ExistingCartItem);
+  // console.log(ExistingCartItem);
     let updatedItems;
     if(ExistingCartItem)
     { const updatedItem={
@@ -38,7 +40,31 @@ if(action.type==='ADD')
 
 }
 
-return defaultState;
+if(action.type==='REMOVE')
+    {  const ExistingCartItemIndex=state.items.findIndex((item)=>item.id===action.id);
+        
+    const ExistingCartItem=state.items[ExistingCartItemIndex];
+    const updatedtotalamount=state.totalAmount-ExistingCartItem.price;   
+    let updatedItems;
+    if(ExistingCartItem.amount===1)
+    { updatedItems=state.items.filter(item=>item.id!==action.id);
+         
+    }else{
+        const updatedItem={...ExistingCartItem,amount:ExistingCartItem.amount-1}
+        updatedItems=[...state.items];
+        updatedItems[ExistingCartItemIndex]=updatedItem;
+    }
+    return{
+        items:updatedItems,
+        totalAmount:updatedtotalamount
+    };
+    }
+    if(action.type==='CLEAR')
+    { return { items:[],
+         totalAmount:0
+    }
+
+    }
 }
 
 const  ProductsProvider = (props) => {
@@ -46,18 +72,24 @@ const  ProductsProvider = (props) => {
   const[CurrentValue,dispatchaction]=useReducer(CartReducer,defaultState);
  
    const additemHandler=(item)=>{ 
+   
     dispatchaction({type:'ADD',item})
 
    }
-   const removeitemHandler=(item)=>{ 
+   const removeitemHandler=(id)=>{ 
     
-   
+    dispatchaction({type:'REMOVE',id:id});
+
+   }
+   const clear=()=>{
+    dispatchaction({type:'CLEAR'})
 
    }
  
   const helper={
     items:CurrentValue.items,
     totalAmount:CurrentValue.totalAmount,
+    clear:clear,
     additem:additemHandler,
     removeitem:removeitemHandler
 

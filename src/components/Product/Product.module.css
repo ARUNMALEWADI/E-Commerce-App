@@ -1,0 +1,12 @@
+.item{
+   
+  display: inline;
+  align-items: center;
+
+}
+.infoblock{
+    columns: 2;
+    margin-top:2cm;
+    margin-bottom: 2cm;
+    align-items: baseline;
+}

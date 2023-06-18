@@ -1,0 +1,25 @@
+.div{
+  
+    margin-left: 5cm;
+   display: flex;
+    align-items: center;
+    font-size: x-large;
+
+}
+.div button{
+    color: white;
+    background-color: aqua;
+    width: 3cm;
+    height: 2cm;
+    font-size: smaller;
+
+}
+.table{
+    width: fit-content;
+    height: max-content;
+    font-size: smaller;
+
+}
+.tr{
+   margin: 10cm;
+}

@@ -1,0 +1,27 @@
+.div{
+    position:absolute;
+    top:0;
+    margin-left: 20cm;
+    width: 10cm;
+    max-height: 10cm;
+    border-radius: 5px;
+    border: 2px solid green;
+    box-shadow: inset;
+    background-color:green;
+    align-items: start;
+    font-weight: bolder;
+}
+.div h3{
+    margin-top:auto;
+    border: 1px solid white;
+    max-width: inherit;
+    max-height: inherit;
+    background-color: black;
+    color: white;
+
+}
+.div button{
+    color: white;
+    background-color: black;
+    height:1cm;
+}

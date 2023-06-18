@@ -1,0 +1,54 @@
+.img{
+    
+    margin-top: 0cm;
+   margin-left: 0.5cm;
+    width:1cm;
+    height:1cm;
+}
+.title{
+    font-size: small;
+    font-weight: bold;
+ 
+
+}
+.list{
+ display:flex;
+ align-items: center;
+}
+.headers{
+    display:flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: x-large;
+   }
+.headers div{
+padding: 15px;;
+   }
+.list div{
+    padding-right:15px;
+    padding-bottom: 1cm;
+}
+
+
+
+.close{
+
+    width: 2cm;
+    height: 1cm;
+    color: azure;
+    background-color: black;
+}
+.purchase{
+ /* margin-left: 10cm; */
+    width: 3cm;
+    height: 1cm;
+    color: azure;
+    background-color: black;
+}
+.price{
+    position: relative;
+    margin-left: 4cm;
+}
+.totalamount{
+    margin-left: 5cm;
+}

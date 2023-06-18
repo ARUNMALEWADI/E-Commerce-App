@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useState } from 'react'
 import Cart from './Cart';
-import ItemContext from './ItemContext';
+import ItemContext from '../Product/ItemContext';
+import classes from './CartButton.module.css'
 
 
 const CartButton = () => {
@@ -15,10 +16,10 @@ const CartButton = () => {
 
    }
   return  <Fragment>
-   <button onClick={ShowCartHandler}>
-    <section>Cart</section>
-    <section>{crx.items.length}</section>
+   <button onClick={ShowCartHandler} className={classes.cartbutton}>
+    <section>CART</section>
    </button>
+   { crx.items.length >0 && <section className={classes.notify}>{crx.items.length}</section>}
    {
     showCart&&<Cart closeCart={HideCartHandler}></Cart>
    }

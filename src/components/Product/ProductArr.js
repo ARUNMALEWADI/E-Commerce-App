@@ -1,5 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import Product from './Product'
+import classes from './ProductArr.module.css'
+import AuthContext from '../Authentication/AuthContext'
 const productsArr = [
 
     {
@@ -9,6 +11,7 @@ const productsArr = [
     price: 100,
     
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+    id:Math.random()
     
     },
     
@@ -19,6 +22,7 @@ const productsArr = [
     price: 50,
     
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+    id:Math.random()
     
     },
     
@@ -29,6 +33,7 @@ const productsArr = [
     price: 70,
     
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+    id:Math.random()
     
     },
     
@@ -39,6 +44,7 @@ const productsArr = [
     price: 100,
     
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+    id:Math.random()
     
     }
     
@@ -47,15 +53,21 @@ const productsArr = [
 
 const ProductArr = () => {
 
-
-  return <Fragment>
-    
-  <ul>
+         const authctx=useContext(AuthContext)
+  return <Fragment >
+    <h1 className={classes.welcome}>Welcome to the Generics Store</h1>
+   {authctx.islogin&&<div>
+    <h1 className={classes.head}>MUSIC</h1>
+  <ul className={classes.ul}>
 {
-    productsArr.map((item)=><Product key={item.title} item={item} id={Math.random()}></Product>)
+    productsArr.map((item)=><Product key={item.title} item={item} ></Product>)
 }
     </ul>
-  
+    </div>
+  }
+  {!authctx.islogin&&<div style={{margin:'5cm',fontSize:"xxx-large"}}>
+    Please SignIn to get acess to store.....
+    </div>}
   </Fragment>
 }
 
