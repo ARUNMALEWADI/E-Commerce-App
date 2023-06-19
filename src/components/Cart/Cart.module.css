@@ -5,6 +5,18 @@
     width:1cm;
     height:1cm;
 }
+
+.cart{ 
+        margin-left: -1cm;
+        position: fixed;
+        top: 0;
+        border: 2px solid white;
+        width: 17cm;
+        height:12cm;
+        box-shadow: rgb(110, 109, 109);
+        background-color: azure;
+
+    }
 .title{
     font-size: small;
     font-weight: bold;
@@ -31,15 +43,18 @@ padding: 15px;;
 
 
 
-.close{
-
+.close{margin-left: 1cm;
+    margin-top: 0.5cm;
     width: 2cm;
     height: 1cm;
     color: azure;
     background-color: black;
+    position: fixed;
 }
 .purchase{
- /* margin-left: 10cm; */
+    position: fixed;
+ margin-left: 12cm;
+ margin-top: 0.5cm;
     width: 3cm;
     height: 1cm;
     color: azure;
@@ -50,5 +65,14 @@ padding: 15px;;
     margin-left: 4cm;
 }
 .totalamount{
-    margin-left: 5cm;
+   
+    width: 30%;
+    padding-top: 0.5cm;
+   border-radius: 10px;
+    height: 1cm;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    
 }

@@ -31,13 +31,13 @@ const Cart = (props) => {
    
   return  <Modal close={props.closeCart}>
     <div className={classes.cart} >
-    <ul  >
-        <div className={classes.headers}><div>Item</div></div>     
+    <div className={classes.headers}><div>Item</div></div>     
+    <ul  style={{overflow:'scroll',height:'6.5cm'}}>
+        
    {items}
-   <div className={classes.totalamount}>
-  { crx.totalAmount>0&& <div>Total Amount:{crx.totalAmount}Rs.</div>}
-   </div>
+  
     </ul>
+    { crx.totalAmount>0 && <div className={classes.totalamount}>Total Amount:{crx.totalAmount}Rs.</div>}
     <button onClick={props.closeCart} className={classes.close}>Close</button>
    <button className={classes.purchase} onClick={Purchase}>Purchase</button>
 

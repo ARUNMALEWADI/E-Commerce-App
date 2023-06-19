@@ -1,8 +1,9 @@
 import React, { Fragment, useContext, useRef, useState } from 'react'
 import classes from './Login.module.css'
 import AuthContext from './AuthContext'
+import Modal from '../Modal/Modal'
 
-const Login = () => {
+const Login = (props) => {
     const authctx=useContext(AuthContext)
     const [Login,Setlogin]=useState(true)
     const [IsLoading,SetLoading]=useState(false)
@@ -44,6 +45,7 @@ const Login = () => {
         authctx.login(data.idToken)
      }).catch((err)=>{  
         alert(err.message);})
+        props.closepage()
 
     }
 
@@ -54,8 +56,9 @@ const Login = () => {
          else
          Setlogin(true)
     }
-  return<Fragment>
+  return<Modal>
     <section className={classes.login}>
+      <button onClick={props.closepage} style={{fontWeight:'bold',marginLeft:'10cm',height:'1cm'}}>X</button>
     <header className={classes.logo}>{Login?'Login':'Sign Up'}</header>
      <form onSubmit={SubmitHandler} className={classes.control}>
     <label className={classes.label}>Email</label>
@@ -74,7 +77,7 @@ const Login = () => {
    </section>
 
 
-   </Fragment>
+   </Modal>
 }
 
 export default Login

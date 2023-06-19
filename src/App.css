@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.overlay {
+  position: fixed;
+  z-index: 10;
+
+}
