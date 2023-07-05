@@ -9,11 +9,12 @@ const CartButton = () => {
    const[showCart ,setCart]= useState(false)
    const ShowCartHandler=()=>{
     setCart(true)
+    document.body.style.overflow = 'hidden';
 
    }
    const HideCartHandler=()=>{
     setCart(false)
-
+    document.body.style.overflow = 'scroll';
    }
   return  <Fragment>
    <button onClick={ShowCartHandler} className={classes.cartbutton}>

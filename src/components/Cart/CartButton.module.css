@@ -13,6 +13,24 @@
     margin-left: 11cm;
     margin-top: 0.3cm;
 }
+
+.cartbutton:active{display: inline-flex;
+    font-family: monospace;
+    font-size: larger;
+    color: white;
+    font-weight: bold;
+    width: 2cm;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: center;
+    background: grey;
+    height: 1cm;
+    position: fixed;
+    margin-left: 11cm;
+    margin-top: 0.3cm;
+   
+}
+
 .notify
 { position: relative;
     margin-left: 3.7cm;

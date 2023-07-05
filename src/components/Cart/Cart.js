@@ -31,7 +31,7 @@ const Cart = (props) => {
    
   return  <Modal close={props.closeCart}>
     <div className={classes.cart} >
-    <div className={classes.headers}><div>Item</div></div>     
+    <div className={classes.headers}><div>ITEMS</div></div>     
     <ul  style={{overflow:'scroll',height:'6.5cm'}}>
         
    {items}

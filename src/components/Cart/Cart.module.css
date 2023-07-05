@@ -7,14 +7,16 @@
 }
 
 .cart{ 
-        margin-left: -1cm;
+        margin-left: -4cm;
         position: fixed;
-        top: 0;
+        top: 1cm;
         border: 2px solid white;
-        width: 17cm;
+        width: 23cm;
         height:12cm;
-        box-shadow: rgb(110, 109, 109);
-        background-color: azure;
+        border-radius: 30px;
+        box-shadow: rgb(159, 159, 206) 15px 15px 15px 15px;
+        border: 5px solid red;
+        background-color:wheat;
 
     }
 .title{
@@ -31,7 +33,14 @@
     display:flex;
     align-items: center;
     font-weight: bold;
-    font-size: x-large;
+    font-size: large;
+    margin-left: 10cm;
+    border: 2px solid white;
+ 
+    background-color:white;
+    
+    height: fit-content;
+    width: fit-content;
    }
 .headers div{
 padding: 15px;;
@@ -43,17 +52,17 @@ padding: 15px;;
 
 
 
-.close{margin-left: 1cm;
+.close{margin-left: 12cm;
     margin-top: 0.5cm;
     width: 2cm;
     height: 1cm;
     color: azure;
     background-color: black;
-    position: fixed;
+    position: relative;
 }
 .purchase{
     position: fixed;
- margin-left: 12cm;
+ margin-left: 3cm;
  margin-top: 0.5cm;
     width: 3cm;
     height: 1cm;
@@ -65,14 +74,17 @@ padding: 15px;;
     margin-left: 4cm;
 }
 .totalamount{
-   
-    width: 30%;
-    padding-top: 0.5cm;
+   margin-left: 0.5cm;
+    width: 6cm;
+    height: fit-content;
+    padding: auto;
    border-radius: 10px;
+   border: 1px solid green ;
     height: 1cm;
-    background-color: red;
+    background-color:yellowgreen;
     color: white;
     font-weight: bold;
     font-style: italic;
+    position:fixed;
     
 }

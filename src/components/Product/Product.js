@@ -14,7 +14,7 @@ const Product = (props) => {
       }
   return<Fragment>
     
-   <li  className={classes.item}><h2>{props.item.title}</h2><div><img src={props.item.imageUrl} alt="fetching Error"></img></div><div className={classes.infoblock}> <div>{props.item.price}Rs.</div><button onClick={AddItemToCartHandler}>Add To Cart</button></div></li>
+   <li  className={classes.item}><h2>{props.item.title}</h2><div><img src={props.item.imageUrl} alt="fetching Error"></img></div><div className={classes.infoblock}> <div>{props.item.price}Rs.</div><button onClick={AddItemToCartHandler} style={{backgroundColor:"green",color:"white",height:"1cm"}}>Add To Cart</button></div></li>
   
    </Fragment>
 }

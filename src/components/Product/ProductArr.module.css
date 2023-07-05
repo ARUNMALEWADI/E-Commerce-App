@@ -1,15 +1,19 @@
 .ul{
-    margin: 5cm;
-    margin-top: 3cm;
-    display: flexbox;
+    position: relative;
+    margin-left: 5cm;
+
+    margin-top: 1cm;
     columns: 2;
+    
  
- align-items: flex-start;
+
 
 }
+
 .head{
-    margin-top:3cm ;
-   margin-left: 13cm;
+   
+    margin-top:1.5cm ;
+   margin-left: 15cm;
 }
 .welcome{
     display: grid;
@@ -18,10 +22,10 @@
     padding-inline-start: 4.5cm;
     padding-bottom: 1cm;
     padding-top: 1cm;
-    margin-top: 2cm;
+    margin-top: 1.6cm;
     background-color: rgb(243, 101, 6);
     color: white;
-    width: 100%;
+    width: unset;
     height: max-content;
     font-size: -webkit-xxx-large;
     

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import Product from './Product'
 import classes from './ProductArr.module.css'
 import AuthContext from '../Authentication/AuthContext'
@@ -53,8 +53,12 @@ const productsArr = [
 
 const ProductArr = () => {
 
+ let Style={overflow:"disabled",position:"fixed"}
          const authctx=useContext(AuthContext)
+         if(authctx.islogin)
+           Style={position:"relative"}
   return <Fragment >
+    <div style={Style}>
     <h1 className={classes.welcome}>Welcome to the Generics Store</h1>
    {authctx.islogin&&<div>
     <h1 className={classes.head}>MUSIC</h1>
@@ -65,9 +69,10 @@ const ProductArr = () => {
     </ul>
     </div>
   }
-  {!authctx.islogin&&<div style={{margin:'5cm',fontSize:"xxx-large"}}>
-    Please SignIn to get acess to store.....
+  {!authctx.islogin&&<div style={{margin:'4cm',fontSize:"xxx-large"}}>
+    Please Signin/Signup to get acess to store.....
     </div>}
+    </div>
   </Fragment>
 }
 
