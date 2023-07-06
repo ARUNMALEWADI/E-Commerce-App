@@ -10,7 +10,7 @@ const ContactUs = () => {
     const phoneref=useRef();
 
 async function POSTdataHandler(CustomerData){
-   await fetch('https://ecommercedatabase-bf756-default-rtdb.firebaseio.com/Contactusdata.json',{method:'POST',
+   await fetch('https://ecommerce-abc49-default-rtdb.firebaseio.com/Contactusdata.json',{method:'POST',
     body:JSON.stringify(CustomerData),
     headers:{'customdata':'application/Json'}
     })
@@ -37,13 +37,13 @@ const ResponseHandler=()=>{
   return<Fragment>
    <form onSubmit={ContactUsHandler} className={classes.control}>
     <label>Name:</label>
-    <input type='text' ref={nameref}></input>
+    <input type='text' ref={nameref} required></input>
     <label>Email:</label>
-    <input type='email' ref={emailref}></input>
+    <input type='email' ref={emailref} required></input>
     <label>PhoneNumber:</label>
-    <input type='phonenumber' ref={phoneref}></input>
+    <input type='phonenumber' ref={phoneref} required></input>
     <label>Message:</label>
-    <textarea type='text' rows={5}   cols={53}></textarea>
+    <textarea type='text' rows={5}   cols={53} required></textarea>
     <button type='submit' >submit</button>
   </form>
   { SubmitResponse &&<Response response={SubmitResponse} close={ResponseHandler}></Response>
