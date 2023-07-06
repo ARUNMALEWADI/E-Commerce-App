@@ -1,5 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState ,useEffect, useContext} from 'react'
 import ItemContext from './ItemContext';
+import AuthContext from '../Authentication/AuthContext';
 
 const defaultState={
   items:[],
@@ -68,8 +69,10 @@ if(action.type==='REMOVE')
 }
 
 const  ProductsProvider = (props) => {
-   
-  const[CurrentValue,dispatchaction]=useReducer(CartReducer,defaultState);
+
+   console.log(props.items);
+  const[CurrentValue,dispatchaction]=useReducer(CartReducer,{items:props.items,
+    totalAmount:props.totalAmount});
  
    const additemHandler=(item)=>{ 
    
@@ -86,6 +89,8 @@ const  ProductsProvider = (props) => {
 
    }
  
+   
+   
   const helper={
     items:CurrentValue.items,
     totalAmount:CurrentValue.totalAmount,
@@ -94,7 +99,7 @@ const  ProductsProvider = (props) => {
     removeitem:removeitemHandler
 
   };
-
+console.log(helper.items);
 return <ItemContext.Provider value={helper}>
   {props.children}
 </ItemContext.Provider>

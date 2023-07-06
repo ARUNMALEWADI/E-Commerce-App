@@ -11,10 +11,12 @@ const Header = () => {
   const [login,Setlogin]=useState(false)
   const loginpageopener=()=>{
     Setlogin(true)
+    document.body.style.overflow = 'hidden';
   }
   
    const loginpagecloser=()=>{
     Setlogin(false)
+    document.body.style.overflow = 'scroll';
    }
  
 
@@ -29,7 +31,7 @@ const Header = () => {
  <Link to="/products" >  <button className={classes.buton}>STORE</button> </Link>  
      
     <button className={classes.login} onClick={loginpageopener}>LOGIN</button>
-      {authctx.token && <CartButton></CartButton>}
+
      {authctx.token&&<button  onClick={ authctx.logout} className={classes.logout}>LOGOUT</button>}
 
    {login&&<Login closepage={loginpagecloser}></Login>}

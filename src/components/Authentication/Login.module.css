@@ -1,7 +1,8 @@
 .login{ 
   position: fixed;
     margin: 5rem auto ;
-    width: 95%;
+    margin-top: 2cm;
+    width: 12cm;
     max-width: 25rem;
     height: 10cm;
     border-radius: 6px;

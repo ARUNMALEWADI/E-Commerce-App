@@ -42,7 +42,9 @@ const Login = (props) => {
          })
        }
      }).then((data)=>{ 
-        authctx.login(data.idToken)
+      console.log(data);
+        authctx.login(data.idToken,data.email.replace(".",""))
+        
      }).catch((err)=>{  
         alert(err.message);})
         props.closepage()

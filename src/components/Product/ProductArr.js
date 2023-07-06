@@ -1,7 +1,9 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext, useState,useEffect } from 'react'
 import Product from './Product'
 import classes from './ProductArr.module.css'
 import AuthContext from '../Authentication/AuthContext'
+import ProductsProvider from './ProductsProvider'
+import CartButton from '../Cart/CartButton'
 const productsArr = [
 
     {
@@ -56,22 +58,70 @@ const ProductArr = () => {
  let Style={overflow:"disabled",position:"fixed"}
          const authctx=useContext(AuthContext)
          if(authctx.islogin)
-           Style={position:"relative"}
+           {Style={position:"relative",overflow:"hidden",width:"100%",height:"100%"}
+               
+           }
+
+
+
+
+
+
+
+           const [Data,SetData]=useState(null)
+         
+           
+           useEffect(()=>{
+             const PutDataHandler=async()=>{
+               const response=await fetch(`https://ecommerce-abc49-default-rtdb.firebaseio.com/${authctx.email}.json`,{method:"GET",headers:{"Content-Type":"application/json"}})
+               const data=await response.json()
+               console.log(data);
+               let c=[]
+               let amount=0;
+               if(data)
+               {  for(const key in data.items)
+                 { c.push({amount:data.items[key].amount,id:data.items[key].id,imageUrl:data.items[key].imageUrl,price:data.items[key].price,title:data.items[key].title});
+                 }
+                 for(const key in data)
+                 {
+                   amount=Number(data[key])
+                 }
+                SetData({items:c,totalAmount:amount})
+               }
+               else
+               {  SetData({items:[],totalAmount:0})
+         
+               }
+         
+           
+              }
+              if(authctx.email)
+               PutDataHandler()},[authctx.islogin])
+         
+          document.body.style.overflowX="hidden"
   return <Fragment >
     <div style={Style}>
     <h1 className={classes.welcome}>Welcome to the Generics Store</h1>
+
+    {!authctx.islogin&&<div style={{margin:'4cm',fontSize:"xxx-large"}}>
+    Please Signin/Signup to get acess to store.....
+    </div>}
+
    {authctx.islogin&&<div>
+    { Data && <ProductsProvider items={Data.items} totalAmount={Data.totalAmount} >
+      
+    {authctx.token && <CartButton></CartButton>}
     <h1 className={classes.head}>MUSIC</h1>
   <ul className={classes.ul}>
 {
     productsArr.map((item)=><Product key={item.title} item={item} ></Product>)
 }
     </ul>
+    </ProductsProvider>
+}
     </div>
   }
-  {!authctx.islogin&&<div style={{margin:'4cm',fontSize:"xxx-large"}}>
-    Please Signin/Signup to get acess to store.....
-    </div>}
+
     </div>
   </Fragment>
 }

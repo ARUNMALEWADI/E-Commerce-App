@@ -1,10 +1,12 @@
 import React, { Fragment, useContext} from 'react'
 import ItemContext from './ItemContext'
 import classes from './Product.module.css'
+import AuthContext from '../Authentication/AuthContext'
 
 
 const Product = (props) => {
     const crx=useContext(ItemContext)
+    const authctx=useContext(AuthContext)
 
     const AddItemToCartHandler=()=>{   
         const item={...props.item,id:props.item.id,amount:1}
@@ -13,7 +15,7 @@ const Product = (props) => {
         
       }
   return<Fragment>
-    
+        
    <li  className={classes.item}><h2>{props.item.title}</h2><div><img src={props.item.imageUrl} alt="fetching Error"></img></div><div className={classes.infoblock}> <div>{props.item.price}Rs.</div><button onClick={AddItemToCartHandler} style={{backgroundColor:"green",color:"white",height:"1cm"}}>Add To Cart</button></div></li>
   
    </Fragment>

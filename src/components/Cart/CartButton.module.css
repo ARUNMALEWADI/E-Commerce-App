@@ -1,4 +1,4 @@
-.cartbutton{display: inline-flex;
+.cartbutton{
     font-family: monospace;
     font-size: larger;
     color: white;
@@ -10,33 +10,22 @@
     background: grey;
     height: 1cm;
     position: fixed;
-    margin-left: 11cm;
-    margin-top: 0.3cm;
-}
-
-.cartbutton:active{display: inline-flex;
-    font-family: monospace;
-    font-size: larger;
-    color: white;
-    font-weight: bold;
-    width: 2cm;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    align-items: center;
-    background: grey;
-    height: 1cm;
-    position: fixed;
-    margin-left: 11cm;
-    margin-top: 0.3cm;
-   
+    margin-left: 21cm;
+    z-index: 10;
+    margin-top:-6.3cm;
+    cursor: pointer;
 }
 
 .notify
-{ position: relative;
-    margin-left: 3.7cm;
+{ position: fixed;
+   border-radius: 1000px;
+width: min-content;
+margin-left: 22.5cm;
+margin-top: -6.7cm;
+
     font-size: unset;
     font-weight: 900;
-
+z-index: 10;
 height: 20px;
 color: red;
 }
